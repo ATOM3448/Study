@@ -14,11 +14,11 @@ namespace myTask
 	class MyList
 	{
 	public:
-		//Голова и хвост
+		//Р“РѕР»РѕРІР° Рё С…РІРѕСЃС‚
 		Node* head;
 		Node* tail;
 
-		//Инициализация
+		//РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 		MyList()
 		{
 			head = NULL;
@@ -38,7 +38,7 @@ namespace myTask
 			}
 		}
 		
-		//Функция вставки перед узлом
+		//Р¤СѓРЅРєС†РёСЏ РІСЃС‚Р°РІРєРё РїРµСЂРµРґ СѓР·Р»РѕРј
 		void insertBefore(Node* node, string newData)
 		{
 			Node* newNode = new Node;
@@ -57,7 +57,7 @@ namespace myTask
 			(*node).last = newNode;
 		}
 
-		//Функция вставки после узла
+		//Р¤СѓРЅРєС†РёСЏ РІСЃС‚Р°РІРєРё РїРѕСЃР»Рµ СѓР·Р»Р°
 		void insertAfter(Node* node, string newData)
 		{
 			Node* newNode = new Node;
@@ -76,7 +76,7 @@ namespace myTask
 			(*node).next = newNode;
 		}
 
-		//Функция вставки узла в начало, возможно пустого списка
+		//Р¤СѓРЅРєС†РёСЏ РІСЃС‚Р°РІРєРё СѓР·Р»Р° РІ РЅР°С‡Р°Р»Рѕ, РІРѕР·РјРѕР¶РЅРѕ РїСѓСЃС‚РѕРіРѕ СЃРїРёСЃРєР°
 		void insertBeginning(string newData)
 		{
 			if (head)
@@ -93,7 +93,7 @@ namespace myTask
 			}
 		}
 
-		//Функция вставки узла в конец
+		//Р¤СѓРЅРєС†РёСЏ РІСЃС‚Р°РІРєРё СѓР·Р»Р° РІ РєРѕРЅРµС†
 		void insertEnd(string newData)
 		{
 			if (tail)
@@ -106,7 +106,7 @@ namespace myTask
 			}
 		}
 
-		//Функция поиска(с начала) элемента из списка
+		//Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР°(СЃ РЅР°С‡Р°Р»Р°) СЌР»РµРјРµРЅС‚Р° РёР· СЃРїРёСЃРєР°
 		Node* findAtStart(string data)
 		{
 			Node* answer = head;
@@ -121,11 +121,11 @@ namespace myTask
 				answer = (*answer).next;
 			}
 
-			cout << "Элемент не найден";
+			cout << "Р­Р»РµРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ";
 			exit(EXIT_FAILURE);
 		}
 
-		//Функция поиска(с конца) элемента из списка
+		//Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР°(СЃ РєРѕРЅС†Р°) СЌР»РµРјРµРЅС‚Р° РёР· СЃРїРёСЃРєР°
 		Node* findAtEnd(string data)
 		{
 			Node* answer = tail;
@@ -140,11 +140,11 @@ namespace myTask
 				answer = (*answer).last;
 			}
 
-			cout << "Элемент не найден";
+			cout << "Р­Р»РµРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ";
 			exit(EXIT_FAILURE);
 		}
 
-		//Функция взятия из списка
+		//Р¤СѓРЅРєС†РёСЏ РІР·СЏС‚РёСЏ РёР· СЃРїРёСЃРєР°
 		string remove(string data)
 		{
 			Node* node = findAtStart(data);
@@ -200,7 +200,7 @@ namespace myTask
 			}
 		}
 
-		//Функция взятия из списка (первого)
+		//Р¤СѓРЅРєС†РёСЏ РІР·СЏС‚РёСЏ РёР· СЃРїРёСЃРєР° (РїРµСЂРІРѕРіРѕ)
 		string remove()
 		{
 			Node* node = head;

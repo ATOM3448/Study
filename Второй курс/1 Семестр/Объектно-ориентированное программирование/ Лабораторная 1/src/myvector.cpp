@@ -8,29 +8,29 @@ namespace myClasses
 {
 			int My_Vector::newID = 0;
 
-			//Конструктор основной
+			//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РѕСЃРЅРѕРІРЅРѕР№
 			My_Vector::My_Vector(double _x = 0.0, double _y = 0.0, double _z = 0.0) :id{ newID++ }
 			{
-				cout << "Работает конструктор 1 для id: " << id << "\n";
+				cout << "Р Р°Р±РѕС‚Р°РµС‚ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ 1 РґР»СЏ id: " << id << "\n";
 				X = _x;
 				Y = _y;
 				Z = _z;				
 			}
 
-			//Конструктор копирования
+			//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 			My_Vector::My_Vector(const My_Vector& early) :id{ newID++ }
 			{
-				cout << "Работает конструктор 2 для id: " << id << "\n";
+				cout << "Р Р°Р±РѕС‚Р°РµС‚ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ 2 РґР»СЏ id: " << id << "\n";
 
 				X = early.X;
 				Y = early.Y;
 				Z = early.Z;
 			}
 		
-			//Деструктор
+			//Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 			My_Vector::~My_Vector()
 			{
-				cout << "Работает деструктордля id: " << id << "\n";
+				cout << "Р Р°Р±РѕС‚Р°РµС‚ РґРµСЃС‚СЂСѓРєС‚РѕСЂРґР»СЏ id: " << id << "\n";
 				X = 0.0;
 				Y = 0.0;
 				Z = 0.0;
@@ -41,7 +41,7 @@ namespace myClasses
 				return id;
 			}
 
-			//Чтение
+			//Р§С‚РµРЅРёРµ
 			double My_Vector::get_X()const
 			{
 				return X;
@@ -55,7 +55,7 @@ namespace myClasses
 				return Z;
 			}
 
-			//Запись
+			//Р—Р°РїРёСЃСЊ
 			void My_Vector::set_X(double _x)
 			{
 				X = _x;
@@ -69,14 +69,14 @@ namespace myClasses
 				Z = _z;
 			}
 
-			//Вычисление модуля вектора
+			//Р’С‹С‡РёСЃР»РµРЅРёРµ РјРѕРґСѓР»СЏ РІРµРєС‚РѕСЂР°
 			double My_Vector::mod()
 			{
 				double res = sqrt(X*X + Y*Y + Z*Z);
 				return res;
 			}
 
-			//Умножение вектора на скаляр
+			//РЈРјРЅРѕР¶РµРЅРёРµ РІРµРєС‚РѕСЂР° РЅР° СЃРєР°Р»СЏСЂ
 			void My_Vector::multiplication(double _x)
 			{
 				X *= _x;
@@ -84,7 +84,7 @@ namespace myClasses
 				Z *= _x;
 			}
 
-			//Копирование вектора
+			//РљРѕРїРёСЂРѕРІР°РЅРёРµ РІРµРєС‚РѕСЂР°
 			void My_Vector::copy(My_Vector& early)
 			{
 				X = early.X;
@@ -92,7 +92,7 @@ namespace myClasses
 				Z = early.Z;
 			}
 
-			//Нормировка
+			//РќРѕСЂРјРёСЂРѕРІРєР°
 			void My_Vector::unitVect()
 			{
 				X /= mod();
@@ -102,7 +102,7 @@ namespace myClasses
 
 	
 
-	//Получение сложения
+	//РџРѕР»СѓС‡РµРЅРёРµ СЃР»РѕР¶РµРЅРёСЏ
 	My_Vector sum(My_Vector& vectorOne, My_Vector& vectorTwo)
 	{
 		My_Vector C_one;
@@ -112,7 +112,7 @@ namespace myClasses
 		return C_one;
 	}
 
-	//Получение вычитания
+	//РџРѕР»СѓС‡РµРЅРёРµ РІС‹С‡РёС‚Р°РЅРёСЏ
 	My_Vector sub(My_Vector& vectorOne, My_Vector& vectorTwo)
 	{
 		My_Vector C_two;
@@ -122,7 +122,7 @@ namespace myClasses
 		return C_two;
 	}
 	
-	//Векторное произведение векторное
+	//Р’РµРєС‚РѕСЂРЅРѕРµ РїСЂРѕРёР·РІРµРґРµРЅРёРµ РІРµРєС‚РѕСЂРЅРѕРµ
 	My_Vector multiplVect(My_Vector& vectorOne, My_Vector& vectorTwo)
 	{
 		My_Vector C_three;
@@ -132,26 +132,26 @@ namespace myClasses
 		return C_three;
 	}
 
-	//Получение произведения скалярное
+	//РџРѕР»СѓС‡РµРЅРёРµ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ СЃРєР°Р»СЏСЂРЅРѕРµ
 	double multiplSkal(My_Vector& vectorOne, My_Vector& vectorTwo)
 	{
 		return (vectorOne.get_X() * vectorTwo.get_X() + vectorOne.get_Y() * vectorTwo.get_Y() + vectorOne.get_Z() * vectorTwo.get_Z());
 	}
 	
-	//Получение синуса
+	//РџРѕР»СѓС‡РµРЅРёРµ СЃРёРЅСѓСЃР°
 	double mySin(My_Vector& vectorOne, My_Vector& vectorTwo)
 	{
 		My_Vector C_three = multiplVect(vectorOne, vectorTwo);
 		return (C_three.mod() / (vectorOne.mod() * vectorTwo.mod()));
 	}
 
-	//Получение косинуса
+	//РџРѕР»СѓС‡РµРЅРёРµ РєРѕСЃРёРЅСѓСЃР°
 	double myCos(My_Vector& vectorOne, My_Vector& vectorTwo)
 	{
 		return (multiplSkal(vectorOne, vectorTwo) / (vectorOne.mod() * vectorTwo.mod()));
 	}
 	
-	//Получение угла
+	//РџРѕР»СѓС‡РµРЅРёРµ СѓРіР»Р°
 	double myAngle(My_Vector& vectorOne, My_Vector& vectorTwo)
 	{
 		return (acos(myCos(vectorOne, vectorTwo))*(180 /M_PI));

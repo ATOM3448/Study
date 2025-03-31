@@ -4,7 +4,7 @@
 
 char** getDict(char* str, int* secOut)
 {
-	//Посчитаем слова в строке
+	//РџРѕСЃС‡РёС‚Р°РµРј СЃР»РѕРІР° РІ СЃС‚СЂРѕРєРµ
 	int countOfWords = 1;
 	for (int i = 0; str[i] != '\0'; i++)
 	{
@@ -14,7 +14,7 @@ char** getDict(char* str, int* secOut)
 		}
 	}
 
-	//Посчитаем длинну каждого слова
+	//РџРѕСЃС‡РёС‚Р°РµРј РґР»РёРЅРЅСѓ РєР°Р¶РґРѕРіРѕ СЃР»РѕРІР°
 	int* lenOfWord = malloc(sizeof(int) * countOfWords);
 	int indexOfWord = -1;
 	int flag = 1;
@@ -36,14 +36,14 @@ char** getDict(char* str, int* secOut)
 		}
 	}
 
-	//Создаём матрицу для словаря
+	//РЎРѕР·РґР°С‘Рј РјР°С‚СЂРёС†Сѓ РґР»СЏ СЃР»РѕРІР°СЂСЏ
 	char** dictionary = malloc(sizeof(char*) * countOfWords);
 	for (int i = 0; i < countOfWords; i++)
 	{
 		dictionary[i] = malloc(sizeof(char) * (lenOfWord[i] + 1));
 	}
 
-	//Заносим наши слова в матрицу
+	//Р—Р°РЅРѕСЃРёРј РЅР°С€Рё СЃР»РѕРІР° РІ РјР°С‚СЂРёС†Сѓ
 	indexOfWord = 0;
 	flag = 0;
 	int indexInWord = 0;
@@ -67,7 +67,7 @@ char** getDict(char* str, int* secOut)
 	}
 	dictionary[indexOfWord][indexInWord] = '\0';
 
-	//Считаем кол-во различных слов
+	//РЎС‡РёС‚Р°РµРј РєРѕР»-РІРѕ СЂР°Р·Р»РёС‡РЅС‹С… СЃР»РѕРІ
 	int countOfUnic = 0;
 	int* indexOfRepeapts = malloc(sizeof(int) * countOfWords);
 	int ind = 0;
@@ -112,7 +112,7 @@ char** getDict(char* str, int* secOut)
 		}
 	}
 
-	//Формируем конечную версию словаря, без повторов
+	//Р¤РѕСЂРјРёСЂСѓРµРј РєРѕРЅРµС‡РЅСѓСЋ РІРµСЂСЃРёСЋ СЃР»РѕРІР°СЂСЏ, Р±РµР· РїРѕРІС‚РѕСЂРѕРІ
 	char** finalDictionary = malloc(sizeof(char*) * countOfUnic);
 	int indexForFD = 0;
 	for (int i = 0; i < countOfWords; i++)
@@ -132,7 +132,7 @@ char** getDict(char* str, int* secOut)
 		}
 	}
 
-	//Подчищаем лишнее
+	//РџРѕРґС‡РёС‰Р°РµРј Р»РёС€РЅРµРµ
 	free(dictionary);
 	free(lenOfWord);
 	free(indexOfRepeapts);
@@ -146,15 +146,15 @@ int main()
 	setlocale(LC_ALL, "rus");
 	srand(time(NULL));
 
-	//Создаём строку
+	//РЎРѕР·РґР°С‘Рј СЃС‚СЂРѕРєСѓ
 	char str[] = " text,some,text,text,that,separated,by, spaces, with, repetitions, by, repetitions, that";
 	char separator[] = ", ";
 
-	//Создаём "словарь"
+	//РЎРѕР·РґР°С‘Рј "СЃР»РѕРІР°СЂСЊ"
 	int countOfWords;
 	char** dictionary = getDict(&str[0], &countOfWords);
 
-	//Сформируем строку
+	//РЎС„РѕСЂРјРёСЂСѓРµРј СЃС‚СЂРѕРєСѓ
 	int sizeOfString = sizeof(char);
 	for (int i = 0; i < countOfWords; i++)
 	{
@@ -171,7 +171,7 @@ int main()
 		}
 	}
 
-	//Вывод результата
+	//Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р°
 	puts(string);
 
 	getch();

@@ -44,7 +44,7 @@ namespace MyTask
 
 			if (!newNode)
 			{
-				cout << endl << "Îøèáêà âûäåëåíèÿ ïàìÿòè" << endl;
+				cout << endl << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ñ Ð¿Ð°Ð¼ÑÑ‚Ð¸" << endl;
 				return;
 			}
 

@@ -21,12 +21,12 @@ namespace myTaskLogic
 			end = 0;
 		}
 
-		//Поместить элемент в очередь
+		//РџРѕРјРµСЃС‚РёС‚СЊ СЌР»РµРјРµРЅС‚ РІ РѕС‡РµСЂРµРґСЊ
 		void Push(int num)
 		{
 			if (end == (size - 1))
 			{
-				cout << "Очередь полна" << endl;
+				cout << "РћС‡РµСЂРµРґСЊ РїРѕР»РЅР°" << endl;
 				exit(EXIT_FAILURE);
 			}
 			else
@@ -35,12 +35,12 @@ namespace myTaskLogic
 			}
 		}
 
-		//Изъять элемент из очереди
+		//РР·СЉСЏС‚СЊ СЌР»РµРјРµРЅС‚ РёР· РѕС‡РµСЂРµРґРё
 		int Pop()
 		{
 			if (start > end)
 			{
-				cout << "Очередь пуста" << endl;
+				cout << "РћС‡РµСЂРµРґСЊ РїСѓСЃС‚Р°" << endl;
 				exit(EXIT_FAILURE);
 			}
 			else
@@ -49,13 +49,13 @@ namespace myTaskLogic
 			}
 		}
 
-		//Получение первого
+		//РџРѕР»СѓС‡РµРЅРёРµ РїРµСЂРІРѕРіРѕ
 		int Start()const
 		{
 			return queue[start];
 		}
 
-		//Является ли очередь пустой
+		//РЇРІР»СЏРµС‚СЃСЏ Р»Рё РѕС‡РµСЂРµРґСЊ РїСѓСЃС‚РѕР№
 		bool IsEmpty()const
 		{
 			if (start > end)

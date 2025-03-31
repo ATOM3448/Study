@@ -7,15 +7,15 @@ using namespace std;
 
 /*
 2.
-Пусть даны три файла вещественных чисел, состоящих из 100, 1000 и 10000 чисел.
-Выполнить сортировку данных с помощью метода пирамидальной сортировки.
-Подсчитать количество операций сравнения для каждого из трех файлов.
+РџСѓСЃС‚СЊ РґР°РЅС‹ С‚СЂРё С„Р°Р№Р»Р° РІРµС‰РµСЃС‚РІРµРЅРЅС‹С… С‡РёСЃРµР», СЃРѕСЃС‚РѕСЏС‰РёС… РёР· 100, 1000 Рё 10000 С‡РёСЃРµР».
+Р’С‹РїРѕР»РЅРёС‚СЊ СЃРѕСЂС‚РёСЂРѕРІРєСѓ РґР°РЅРЅС‹С… СЃ РїРѕРјРѕС‰СЊСЋ РјРµС‚РѕРґР° РїРёСЂР°РјРёРґР°Р»СЊРЅРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё.
+РџРѕРґСЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕРїРµСЂР°С†РёР№ СЃСЂР°РІРЅРµРЅРёСЏ РґР»СЏ РєР°Р¶РґРѕРіРѕ РёР· С‚СЂРµС… С„Р°Р№Р»РѕРІ.
 */
 
 void FileGenerator()
 {
 	srand(time(NULL));
-	ofstream f100("D:/СИАОД/4 семестр/8 лаба/lab8/lab8/100.txt", ios_base::trunc);
+	ofstream f100("D:/РЎРРђРћР”/4 СЃРµРјРµСЃС‚СЂ/8 Р»Р°Р±Р°/lab8/lab8/100.txt", ios_base::trunc);
 	for (int i = 0; i < 100; i++)
 	{
 		f100 << rand();
@@ -23,7 +23,7 @@ void FileGenerator()
 	}
 	f100.close();
 
-	ofstream f1000("D:/СИАОД/4 семестр/8 лаба/lab8/lab8/1000.txt", ios_base::trunc);
+	ofstream f1000("D:/РЎРРђРћР”/4 СЃРµРјРµСЃС‚СЂ/8 Р»Р°Р±Р°/lab8/lab8/1000.txt", ios_base::trunc);
 	for (int i = 0; i < 1000; i++)
 	{
 		f1000 << rand();
@@ -31,7 +31,7 @@ void FileGenerator()
 	}
 	f1000.close();
 
-	ofstream f10000("D:/СИАОД/4 семестр/8 лаба/lab8/lab8/10000.txt", ios_base::trunc);
+	ofstream f10000("D:/РЎРРђРћР”/4 СЃРµРјРµСЃС‚СЂ/8 Р»Р°Р±Р°/lab8/lab8/10000.txt", ios_base::trunc);
 	for (int i = 0; i < 10000; i++)
 	{
 		f10000 << rand();
@@ -84,13 +84,13 @@ void Balance(int* _nums, int _size, int _node, int* _counter)
 
 void Task(int* _nums, int _size, int* _counter)
 {
-	// Начальная сортировка
+	// РќР°С‡Р°Р»СЊРЅР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°
 	for (int i = _size / 2 - 1; i >= 0; i--)
 	{
 		Balance(_nums, _size, i, _counter);
 	}
 
-	// Сортируем
+	// РЎРѕСЂС‚РёСЂСѓРµРј
 	for (int i = _size - 1; i >= 0; i--)
 	{
 		int buf = _nums[0];
@@ -114,19 +114,19 @@ int main()
 
 		if (size == 100)
 		{
-			f = ofstream("D:/СИАОД/4 семестр/8 лаба/lab8/lab8/result_100.txt", ios_base::trunc);
+			f = ofstream("D:/РЎРРђРћР”/4 СЃРµРјРµСЃС‚СЂ/8 Р»Р°Р±Р°/lab8/lab8/result_100.txt", ios_base::trunc);
 			nums = MassiveCreater("100.txt", size);
 		}
 		
 		if (size == 1000)
 		{
-			f = ofstream("D:/СИАОД/4 семестр/8 лаба/lab8/lab8/result_1000.txt", ios_base::trunc);
+			f = ofstream("D:/РЎРРђРћР”/4 СЃРµРјРµСЃС‚СЂ/8 Р»Р°Р±Р°/lab8/lab8/result_1000.txt", ios_base::trunc);
 			nums = MassiveCreater("1000.txt", size);
 		}
 		
 		if (size == 10000)
 		{
-			f = ofstream("D:/СИАОД/4 семестр/8 лаба/lab8/lab8/result_10000.txt", ios_base::trunc);
+			f = ofstream("D:/РЎРРђРћР”/4 СЃРµРјРµСЃС‚СЂ/8 Р»Р°Р±Р°/lab8/lab8/result_10000.txt", ios_base::trunc);
 			nums = MassiveCreater("10000.txt", size);
 		}
 		

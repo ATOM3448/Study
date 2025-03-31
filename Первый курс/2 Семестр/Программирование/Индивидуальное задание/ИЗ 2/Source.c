@@ -4,10 +4,10 @@
 
 int** matGen(int countOfString, int countOfCollum, int emptyCollums ,short mode)
 {
-	//mode = 0 - Выделение памяти, без присвоения значений
-	//mode = 1 - Выделение памяти, значения присваиваются, не выводятся
-	//mode = 2 - Выделение памяти, значения присваиваются, идёт вывод
-	//Параметр emptyCollums указывает, сколько столбцов с конца будут пустыми
+	//mode = 0 - Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё, Р±РµР· РїСЂРёСЃРІРѕРµРЅРёСЏ Р·РЅР°С‡РµРЅРёР№
+	//mode = 1 - Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё, Р·РЅР°С‡РµРЅРёСЏ РїСЂРёСЃРІР°РёРІР°СЋС‚СЃСЏ, РЅРµ РІС‹РІРѕРґСЏС‚СЃСЏ
+	//mode = 2 - Р’С‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё, Р·РЅР°С‡РµРЅРёСЏ РїСЂРёСЃРІР°РёРІР°СЋС‚СЃСЏ, РёРґС‘С‚ РІС‹РІРѕРґ
+	//РџР°СЂР°РјРµС‚СЂ emptyCollums СѓРєР°Р·С‹РІР°РµС‚, СЃРєРѕР»СЊРєРѕ СЃС‚РѕР»Р±С†РѕРІ СЃ РєРѕРЅС†Р° Р±СѓРґСѓС‚ РїСѓСЃС‚С‹РјРё
 
 	int** matrix = malloc(sizeof(int**) * countOfString);
 	for (int indexOfString = 0; indexOfString < countOfString; indexOfString++)
@@ -35,7 +35,7 @@ int** matGen(int countOfString, int countOfCollum, int emptyCollums ,short mode)
 
 int counting(int** matrix, int numOfCollum, int lenOfCollum, float* secOut)
 {
-	//Ищем среднее
+	//РС‰РµРј СЃСЂРµРґРЅРµРµ
 	float average = 0;
 	for (int i = 0; i < lenOfCollum; i++)
 	{
@@ -43,7 +43,7 @@ int counting(int** matrix, int numOfCollum, int lenOfCollum, float* secOut)
 	}
 	average /= lenOfCollum;
 
-	//Ищем числа, которые больше среднего
+	//РС‰РµРј С‡РёСЃР»Р°, РєРѕС‚РѕСЂС‹Рµ Р±РѕР»СЊС€Рµ СЃСЂРµРґРЅРµРіРѕ
 	int count = 0;
 	for (int i = 0; i < lenOfCollum; i++)
 	{
@@ -62,18 +62,18 @@ int main()
 	setlocale(LC_ALL, "rus");
 	srand(time(NULL));
 
-	//Получаем размеры матрицы
+	//РџРѕР»СѓС‡Р°РµРј СЂР°Р·РјРµСЂС‹ РјР°С‚СЂРёС†С‹
 	int m;
 	int n;
-	printf("Введите M: ");
+	printf("Р’РІРµРґРёС‚Рµ M: ");
 	scanf("%d", &m);
-	printf("Введите n: ");
+	printf("Р’РІРµРґРёС‚Рµ n: ");
 	scanf("%d", &n);
 
-	//Генерируем матрицу
+	//Р“РµРЅРµСЂРёСЂСѓРµРј РјР°С‚СЂРёС†Сѓ
 	int** matrix = matGen(m, n, 0, 2);
 
-	//Считаем сколько элементов столбце больше среднего этого столбца
+	//РЎС‡РёС‚Р°РµРј СЃРєРѕР»СЊРєРѕ СЌР»РµРјРµРЅС‚РѕРІ СЃС‚РѕР»Р±С†Рµ Р±РѕР»СЊС€Рµ СЃСЂРµРґРЅРµРіРѕ СЌС‚РѕРіРѕ СЃС‚РѕР»Р±С†Р°
 	int* res = malloc(sizeof(int) * n);
 	for (int i = 0; i < n; i++) 
 	{

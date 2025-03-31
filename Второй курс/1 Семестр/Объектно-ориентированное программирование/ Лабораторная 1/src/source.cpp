@@ -11,7 +11,7 @@ int main()
 {
 	setlocale(LC_ALL, "russian");
 
-	//Создание векторов
+	//РЎРѕР·РґР°РЅРёРµ РІРµРєС‚РѕСЂРѕРІ
 
 	My_Vector vectorOne(5, 8, 2);
 
@@ -27,41 +27,41 @@ int main()
 	cout << "Y2: " << vectorTwo.get_Y() << "\n";
 	cout << "Z2: " << vectorTwo.get_Z() << "\n" << "\n";
 
-	//Вывод C1
+	//Р’С‹РІРѕРґ C1
 	My_Vector C_one = sum(vectorOne, vectorTwo);
 	cout << "X: " << C_one.get_X() << "\n";
 	cout << "Y: " << C_one.get_Y() << "\n";
 	cout << "Z: " << C_one.get_Z() << "\n" << "\n";
 
-	//Вывод C2
+	//Р’С‹РІРѕРґ C2
 	My_Vector C_two = sub(vectorOne, vectorTwo);
 	cout << "X: " << C_two.get_X() << "\n";
 	cout << "Y: " << C_two.get_Y() << "\n";
 	cout << "Z: " << C_two.get_Z() << "\n" << "\n";
 
-	//Вывод C3
+	//Р’С‹РІРѕРґ C3
 	My_Vector C_three = multiplVect(vectorOne, vectorTwo);
 	cout << "X: " << C_three.get_X() << "\n";
 	cout << "Y: " << C_three.get_Y() << "\n";
 	cout << "Z: " << C_three.get_Z() << "\n" << "\n";
 
-	//Вывод единичного вектора
+	//Р’С‹РІРѕРґ РµРґРёРЅРёС‡РЅРѕРіРѕ РІРµРєС‚РѕСЂР°
 	My_Vector copyOfVO(vectorOne);
 	copyOfVO.unitVect();
 	cout << "unit X: " << copyOfVO.get_X() << "\n";
 	cout << "unit Y: " << copyOfVO.get_Y() << "\n";
 	cout << "unit Z: " << copyOfVO.get_Z() << "\n" << "\n";
 
-	//Вывод скалярного произведения
+	//Р’С‹РІРѕРґ СЃРєР°Р»СЏСЂРЅРѕРіРѕ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ
 	cout << "skalMult: " << multiplSkal(vectorOne, vectorTwo) << endl;
 
-	//Вывод синуса
+	//Р’С‹РІРѕРґ СЃРёРЅСѓСЃР°
 	cout << "Sin: " << mySin(vectorOne, vectorTwo) << endl;
 
-	//Вывод косинуса
+	//Р’С‹РІРѕРґ РєРѕСЃРёРЅСѓСЃР°
 	cout << "Cos: " << myCos(vectorOne, vectorTwo) << endl;
 
-	//Вывод угла
+	//Р’С‹РІРѕРґ СѓРіР»Р°
 	cout << "Angle: " << myAngle(vectorOne, vectorTwo) << endl;
 
 	cin.get();

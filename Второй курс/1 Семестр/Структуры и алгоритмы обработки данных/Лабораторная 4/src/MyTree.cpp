@@ -5,37 +5,37 @@
 using namespace std;
 using namespace MyTask;
 
-//Инициализация
+//РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 MyTree::MyTree()
 {
 	root = NULL;
 }
 
-//Очитка памяти
+//РћС‡РёС‚РєР° РїР°РјСЏС‚Рё
 MyTree::~MyTree()
 {
 	travel_tree_clear(root);
 }
 
-//Поиск элемента
+//РџРѕРёСЃРє СЌР»РµРјРµРЅС‚Р°
 MyTree::Tree* MyTree::search_tree(Tree* node, int info)
 {
-	//Если узел пуст - прекращаем обход
+	//Р•СЃР»Рё СѓР·РµР» РїСѓСЃС‚ - РїСЂРµРєСЂР°С‰Р°РµРј РѕР±С…РѕРґ
 	if (!node)
 		return NULL;
 
-	//Если нашли нужные данные - возвращаем узел
+	//Р•СЃР»Рё РЅР°С€Р»Рё РЅСѓР¶РЅС‹Рµ РґР°РЅРЅС‹Рµ - РІРѕР·РІСЂР°С‰Р°РµРј СѓР·РµР»
 	if (node->item == info)
 		return node;
 
-	//Если нужный элемент меньше текущего - идём в левую ветвь иначе - в правую
+	//Р•СЃР»Рё РЅСѓР¶РЅС‹Р№ СЌР»РµРјРµРЅС‚ РјРµРЅСЊС€Рµ С‚РµРєСѓС‰РµРіРѕ - РёРґС‘Рј РІ Р»РµРІСѓСЋ РІРµС‚РІСЊ РёРЅР°С‡Рµ - РІ РїСЂР°РІСѓСЋ
 	if (info < node->item)
 		return(search_tree(node->left, info));
 	else
 		return(search_tree(node->right, info));
 }
 
-//Обход дерева(Вычсиление суммы листьев)
+//РћР±С…РѕРґ РґРµСЂРµРІР°(Р’С‹С‡СЃРёР»РµРЅРёРµ СЃСѓРјРјС‹ Р»РёСЃС‚СЊРµРІ)
 int MyTree::travel_tree_sum(Tree* node)
 {
 	if (node)
@@ -50,7 +50,7 @@ int MyTree::travel_tree_sum(Tree* node)
 	return 0;
 }
 
-//Обход дерева(Вывод в консоль)
+//РћР±С…РѕРґ РґРµСЂРµРІР°(Р’С‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ)
 void MyTree::travel_tree_print_boring(Tree* node, int level)
 {
 	if (node)
@@ -74,7 +74,7 @@ void MyTree::travel_tree_print_boring(Tree* node, int level)
 	}
 }
 
-//Обход дерева(Очистка памяти)
+//РћР±С…РѕРґ РґРµСЂРµРІР°(РћС‡РёСЃС‚РєР° РїР°РјСЏС‚Рё)
 void MyTree::travel_tree_clear(Tree* node)
 {
 	if (node)
@@ -89,7 +89,7 @@ void MyTree::travel_tree_clear(Tree* node)
 	}
 }
 
-//Получение максимального элемента
+//РџРѕР»СѓС‡РµРЅРёРµ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 MyTree::Tree* MyTree::max_of_tree(Tree* node)
 {
 	Tree* max;
@@ -101,7 +101,7 @@ MyTree::Tree* MyTree::max_of_tree(Tree* node)
 	return max;
 }
 
-//Получение минимального элемента
+//РџРѕР»СѓС‡РµРЅРёРµ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 MyTree::Tree* MyTree::min_of_tree(Tree* node)
 {
 	Tree* min;
@@ -113,7 +113,7 @@ MyTree::Tree* MyTree::min_of_tree(Tree* node)
 	return min;
 }
 
-//Вставка
+//Р’СЃС‚Р°РІРєР°
 void MyTree::insert_tree(Tree** node, int info, Tree* parent)
 {
 	Tree* timeNode;
@@ -136,7 +136,7 @@ void MyTree::insert_tree(Tree** node, int info, Tree* parent)
 			insert_tree(&((*node)->right), info, *node);
 }
 
-//Удаление
+//РЈРґР°Р»РµРЅРёРµ
 void MyTree::remove_tree(Tree* node)
 {
 	if (node->left == node->right == NULL)

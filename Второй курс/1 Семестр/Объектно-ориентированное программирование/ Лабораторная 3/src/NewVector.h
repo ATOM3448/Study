@@ -10,61 +10,61 @@ namespace myTask
 		static unsigned int counter;
 	public:
 
-		//Конструктор по умолчанию
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 		explicit NewVector();
 
-		//Конструктор с параметрами
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 		NewVector(unsigned int _col, double* _data);
 
-		//Конструктор копирующий
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂСѓСЋС‰РёР№
 		NewVector(const NewVector& _in);
 
-		//Конструктор перемещения
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 		NewVector(NewVector&& _in);
 
-		//Получить значение счётчика
+		//РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ СЃС‡С‘С‚С‡РёРєР°
 		unsigned int MyBaseClass::getNextId();
 
-		//Переименовать
-		//Проверка на возможность сложения
+		//РџРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ
+		//РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЃР»РѕР¶РµРЅРёСЏ
 		bool CheckAdd(const NewVector& _in)const;
 
-		//Переименовать
-		//Проверка на возможность умножения
+		//РџРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ
+		//РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓРјРЅРѕР¶РµРЅРёСЏ
 		bool CheckMul(const NewVector& _in)const;
 
-		//Оператор вывода
+		//РћРїРµСЂР°С‚РѕСЂ РІС‹РІРѕРґР°
 		friend std::ostream& operator<<(std::ostream& _os, const NewVector& _in);
 
-		//Оператор копирования
+		//РћРїРµСЂР°С‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 		NewVector& operator=(const NewVector& _in);
 
-		//Оператор перемещения
+		//РћРїРµСЂР°С‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 		NewVector& operator=(NewVector&& _in);
 
-		//Оператор +=
+		//РћРїРµСЂР°С‚РѕСЂ +=
 		NewVector& operator+=(const NewVector& _in);
 
-		//Оператор -=
+		//РћРїРµСЂР°С‚РѕСЂ -=
 		NewVector& operator-=(const NewVector& _in);
 
-		//Оператор *=
+		//РћРїРµСЂР°С‚РѕСЂ *=
 		NewVector& operator*=(const NewVector& _in);
 
-		//Оператор *= скаляр
+		//РћРїРµСЂР°С‚РѕСЂ *= СЃРєР°Р»СЏСЂ
 		NewVector& operator*=(const double _in);
 	};
 
-	//Переопределение оператора +
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° +
 	NewVector operator+(const NewVector& _left, const NewVector& _right);
 
-	//Переопределение оператора -
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° -
 	NewVector operator-(const NewVector& _left, const NewVector& _right);
 
-	//Переопределение оператора *
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° *
 	NewVector operator*(const NewVector& _left, const NewVector& _right);
 
-	//Переопределение оператора * на скаляр
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° * РЅР° СЃРєР°Р»СЏСЂ
 	NewVector operator*(const NewVector& _left, const double _right);
 
 }

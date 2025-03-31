@@ -10,37 +10,37 @@ namespace myClasses
 		static int newID;
 		const int id;
 	public:
-		//Конструктор основной
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РѕСЃРЅРѕРІРЅРѕР№
 		explicit My_Vector(double _x, double _y, double _z);
 
-		//Конструктор копирования
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 		My_Vector(const My_Vector& early);
 
-		//Деконструктор
+		//Р”РµРєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 		~My_Vector();
 
 		int getId();
 
-		//Чтение
+		//Р§С‚РµРЅРёРµ
 		double get_X()const;
 		double get_Y()const;
 		double get_Z()const;
 
-		//Запись
+		//Р—Р°РїРёСЃСЊ
 		void set_X(double _x);
 		void set_Y(double _y);
 		void set_Z(double _z);
 
-		//Вычисление модуля вектора
+		//Р’С‹С‡РёСЃР»РµРЅРёРµ РјРѕРґСѓР»СЏ РІРµРєС‚РѕСЂР°
 		double mod();
 
-		//Умножение вектора на скаляр
+		//РЈРјРЅРѕР¶РµРЅРёРµ РІРµРєС‚РѕСЂР° РЅР° СЃРєР°Р»СЏСЂ
 		void multiplication(double _x);
 
-		//Копирование вектора
+		//РљРѕРїРёСЂРѕРІР°РЅРёРµ РІРµРєС‚РѕСЂР°
 		void copy(My_Vector& early);
 
-		//Нормировка
+		//РќРѕСЂРјРёСЂРѕРІРєР°
 		void unitVect();
 	};
 	My_Vector sum(My_Vector& vectorOne, My_Vector& vectorTwo);

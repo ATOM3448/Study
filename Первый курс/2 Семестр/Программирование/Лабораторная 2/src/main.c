@@ -21,7 +21,7 @@ int** genMatrix(int M, int N)
 
 int* nums(int* string, int N, int* size)
 {
-	//Ищем кол-во различных чисел
+	//РС‰РµРј РєРѕР»-РІРѕ СЂР°Р·Р»РёС‡РЅС‹С… С‡РёСЃРµР»
 	int countOfNums = 1;
 	for (int i = 1; i < N; i++)
 	{
@@ -39,7 +39,7 @@ int* nums(int* string, int N, int* size)
 		}
 	}
 
-	//Формируем множество
+	//Р¤РѕСЂРјРёСЂСѓРµРј РјРЅРѕР¶РµСЃС‚РІРѕ
 	int* plenty = malloc(sizeof(int) * countOfNums);
 	plenty[0] = string[0];
 	int index = 1;
@@ -59,7 +59,7 @@ int* nums(int* string, int N, int* size)
 		}
 	}
 
-	//Сортируем множество
+	//РЎРѕСЂС‚РёСЂСѓРµРј РјРЅРѕР¶РµСЃС‚РІРѕ
 	for (int j = 0; j < countOfNums; j++)
 	{
 		for (int i = 0; i < (countOfNums - 1); i++)
@@ -73,7 +73,7 @@ int* nums(int* string, int N, int* size)
 		}
 	}
 
-	//Выводим множество
+	//Р’С‹РІРѕРґРёРј РјРЅРѕР¶РµСЃС‚РІРѕ
 	printf("\n");
 	printf("\n");
 	for (int i = 0; i < countOfNums; i++)
@@ -88,10 +88,10 @@ int* nums(int* string, int N, int* size)
 
 int countingSimilar(int* plenty, int lenghtOfPlenty, int** mat, int M, int N)
 {
-	//Переменная, отображающая кол-во схожих строк
+	//РџРµСЂРµРјРµРЅРЅР°СЏ, РѕС‚РѕР±СЂР°Р¶Р°СЋС‰Р°СЏ РєРѕР»-РІРѕ СЃС…РѕР¶РёС… СЃС‚СЂРѕРє
 	int countOfSimilar = 0;
 
-	//Сравниваем все строки
+	//РЎСЂР°РІРЅРёРІР°РµРј РІСЃРµ СЃС‚СЂРѕРєРё
 	for (int i = 1; i < M; i++)
 	{
 		int size;
@@ -124,23 +124,23 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 	srand(time(NULL));
-	//Ввод размеров
+	//Р’РІРѕРґ СЂР°Р·РјРµСЂРѕРІ
 	int M;
 	int N;
-	printf("Введите M: ");
+	printf("Р’РІРµРґРёС‚Рµ M: ");
 	scanf("%d", &M);
-	printf("Введите N: ");
+	printf("Р’РІРµРґРёС‚Рµ N: ");
 	scanf("%d", &N);
 
-	//Генерация матрицы
+	//Р“РµРЅРµСЂР°С†РёСЏ РјР°С‚СЂРёС†С‹
 	int** mat = genMatrix(M, N);
 
-	//Формируем множество
+	//Р¤РѕСЂРјРёСЂСѓРµРј РјРЅРѕР¶РµСЃС‚РІРѕ
 	int size;
 	int* plenty = nums(mat[0], N, &size);
 
-	//Выявление схожей строки
-	printf("\nСхожих строк с первой: %d", countingSimilar(plenty, size, mat, M, N));
+	//Р’С‹СЏРІР»РµРЅРёРµ СЃС…РѕР¶РµР№ СЃС‚СЂРѕРєРё
+	printf("\nРЎС…РѕР¶РёС… СЃС‚СЂРѕРє СЃ РїРµСЂРІРѕР№: %d", countingSimilar(plenty, size, mat, M, N));
 
 	free(mat);
 	getch();

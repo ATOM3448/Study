@@ -24,9 +24,9 @@ MyTree* InputData()
 	int in = 0;
 	int size = 0;
 
-	cout << "\n\tÂâûåäèòå êîë-âî ýëåìåíòîâ: ";
+	cout << "\n\tÃ‚Ã¢Ã»Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«-Ã¢Ã® Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢: ";
 	cin >> size;
-	cout << "\n\tÂâûåäèòå ýëåìåíòû: \n";
+	cout << "\n\tÃ‚Ã¢Ã»Ã¥Ã¤Ã¨Ã²Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã»: \n";
 
 	for (int i = 0; i < size; i++)
 	{
@@ -58,7 +58,7 @@ int main()
 	setlocale(0, "");
 	srand(time(NULL));
 
-	cout << "Âûáåðèòå ðåæèì:\n\t1: Ðàíäîì\n\t2: Ââîä â êîíñîëè\n\t3: ×òåíèå ñ ôàéëà\nÂàø âûáîð: ";
+	cout << "Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã°Ã¥Ã¦Ã¨Ã¬:\n\t1: ÃÃ Ã­Ã¤Ã®Ã¬\n\t2: Ã‚Ã¢Ã®Ã¤ Ã¢ ÃªÃ®Ã­Ã±Ã®Ã«Ã¨\n\t3: Ã—Ã²Ã¥Ã­Ã¨Ã¥ Ã± Ã´Ã Ã©Ã«Ã \nÃ‚Ã Ã¸ Ã¢Ã»Ã¡Ã®Ã°: ";
 
 	__int16 mode = 0;
 	cin >> mode;
@@ -77,18 +77,18 @@ int main()
 		tree = fileData();
 		break;
 	default:
-		cout << "Íåêîððåêòíûé ââîä";
+		cout << "ÃÃ¥ÃªÃ®Ã°Ã°Ã¥ÃªÃ²Ã­Ã»Ã© Ã¢Ã¢Ã®Ã¤";
 		exit(EXIT_FAILURE);
 		break;
 	}
 	
-	cout << "\n\nÄåðåâî:\n";
+	cout << "\n\nÃ„Ã¥Ã°Ã¥Ã¢Ã®:\n";
 
 	tree->travel_tree_print_boring(tree->root);
 
 	cout << endl;
 
-	cout << "Ñóììà ëèñòüåâ: " << tree->travel_tree_sum(tree->root) << endl;
+	cout << "Ã‘Ã³Ã¬Ã¬Ã  Ã«Ã¨Ã±Ã²Ã¼Ã¥Ã¢: " << tree->travel_tree_sum(tree->root) << endl;
 
 	cout << endl;
 

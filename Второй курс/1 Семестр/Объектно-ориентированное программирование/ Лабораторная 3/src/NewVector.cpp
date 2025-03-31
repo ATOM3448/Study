@@ -6,28 +6,28 @@ using namespace std;
 
 namespace myTask
 {
-	//Счётчик id
+	//РЎС‡С‘С‚С‡РёРє id
 	unsigned int NewVector::counter = 0;
 
-	//Конструктор по умолчанию
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	NewVector::NewVector() : MyBaseClass(1, 3, &counter, nullptr)
 	{
 		cout << "Constructor #1 for id: " << id << endl;
 	}
 
-	//Конструктор с параметрами
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	NewVector::NewVector(unsigned int _col, double* _data) : MyBaseClass(1, _col, &counter, _data)
 	{
 		cout << "Constructor #2 for id: " << id << endl;
 	}
 
-	//Конструктор копирующий
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂСѓСЋС‰РёР№
 	NewVector::NewVector(const NewVector& _in) : MyBaseClass(_in.rows, _in.cols, &counter, _in.data)
 	{
 		cout << "Constructor #3 for id: " << id << endl;
 	}
 
-	//Конструктор перемещения
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 	NewVector::NewVector(NewVector&& _in) : MyBaseClass(_in.rows, _in.cols, &counter, _in.data)
 	{
 		_in.rows = 0;
@@ -37,13 +37,13 @@ namespace myTask
 		cout << "Constructor #4 for id: " << id << endl;
 	}
 	
-	//Получить значение счётчика
+	//РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ СЃС‡С‘С‚С‡РёРєР°
 	unsigned int NewVector::getNextId()
 	{
 		return counter;
 	}
 
-	//Проверка на возможность умножения
+	//РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓРјРЅРѕР¶РµРЅРёСЏ
 	bool NewVector::CheckMul(const NewVector& _right)const
 	{
 		if (cols == _right.getCols())
@@ -59,12 +59,12 @@ namespace myTask
 		return 0;
 	}
 
-	//Оператор умножения
+	//РћРїРµСЂР°С‚РѕСЂ СѓРјРЅРѕР¶РµРЅРёСЏ
 	NewVector& NewVector::operator*=(const NewVector& _right)
 	{
 		if (!CheckMul(_right))
 		{
-			throw logic_error{ "Данные вектора перемножать нельзя" };
+			throw logic_error{ "Р”Р°РЅРЅС‹Рµ РІРµРєС‚РѕСЂР° РїРµСЂРµРјРЅРѕР¶Р°С‚СЊ РЅРµР»СЊР·СЏ" };
 		}
 
 		double* buf = _right.getData();
@@ -82,7 +82,7 @@ namespace myTask
 		return *this;
 	}
 
-	//Проверка возможности сложения
+	//РџСЂРѕРІРµСЂРєР° РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё СЃР»РѕР¶РµРЅРёСЏ
 	bool NewVector::CheckAdd(const NewVector& _in)const
 	{
 		if ((this->rows == _in.rows) && (this->cols == _in.cols))
@@ -93,7 +93,7 @@ namespace myTask
 		return 0;
 	}
 
-	//Переопределение оператора <<
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° <<
 	ostream& operator<<(ostream& _os, const NewVector& _in)
 	{
 		double* buf = _in.getData();
@@ -111,7 +111,7 @@ namespace myTask
 		return _os;
 	}
 
-	//Оператор копирования
+	//РћРїРµСЂР°С‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	NewVector& NewVector::operator=(const NewVector& _in)
 	{
 		if (!((rows == _in.rows) && (cols == _in.cols)))
@@ -135,7 +135,7 @@ namespace myTask
 		return *this;
 	}
 
-	//Оператор перемещения
+	//РћРїРµСЂР°С‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 	NewVector& NewVector::operator=(NewVector&& _in)
 	{
 
@@ -154,12 +154,12 @@ namespace myTask
 		return *this;
 	}
 
-	//Оператор +=
+	//РћРїРµСЂР°С‚РѕСЂ +=
 	NewVector& NewVector::operator+=(const NewVector& _in)
 	{
 		if (!CheckAdd(_in))
 		{
-			throw logic_error{ "Данные вектора складывать нельзя" };
+			throw logic_error{ "Р”Р°РЅРЅС‹Рµ РІРµРєС‚РѕСЂР° СЃРєР»Р°РґС‹РІР°С‚СЊ РЅРµР»СЊР·СЏ" };
 		}
 
 		for (unsigned int i = 0; i < cols * rows; i++)
@@ -170,12 +170,12 @@ namespace myTask
 		return *this;
 	}
 
-	//Оператор -=
+	//РћРїРµСЂР°С‚РѕСЂ -=
 	NewVector& NewVector::operator-=(const NewVector& _in)
 	{
 		if (!CheckAdd(_in))
 		{
-			throw logic_error{ "Данные вектора нельзя вычитать" };
+			throw logic_error{ "Р”Р°РЅРЅС‹Рµ РІРµРєС‚РѕСЂР° РЅРµР»СЊР·СЏ РІС‹С‡РёС‚Р°С‚СЊ" };
 		}
 
 		for (unsigned int i = 0; i < cols * rows; i++)
@@ -186,7 +186,7 @@ namespace myTask
 		return *this;
 	}
 
-	//Оператор *= скаляр
+	//РћРїРµСЂР°С‚РѕСЂ *= СЃРєР°Р»СЏСЂ
 	NewVector& NewVector::operator *= (const double _in)
 	{
 		for (unsigned int i = 0; i < rows*cols; i++)
@@ -197,12 +197,12 @@ namespace myTask
 		return *this;
 	}
 
-	//Переопределение оператора +
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° +
 	NewVector operator+(const NewVector& _left, const NewVector& _right)
 	{
 		if (!_left.CheckAdd(_right))
 		{
-			throw logic_error{ "Данные матрицы складывать нельзя" };
+			throw logic_error{ "Р”Р°РЅРЅС‹Рµ РјР°С‚СЂРёС†С‹ СЃРєР»Р°РґС‹РІР°С‚СЊ РЅРµР»СЊР·СЏ" };
 		}
 
 		NewVector toOut(_left);
@@ -210,12 +210,12 @@ namespace myTask
 		return toOut += _right;
 	}
 
-	//Переопределение оператора -
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° -
 	NewVector operator-(const NewVector& _left, const NewVector& _right)
 	{
 		if (!_left.CheckAdd(_right))
 		{
-			throw logic_error{ "Данные матрицы вычитать нельзя" };
+			throw logic_error{ "Р”Р°РЅРЅС‹Рµ РјР°С‚СЂРёС†С‹ РІС‹С‡РёС‚Р°С‚СЊ РЅРµР»СЊР·СЏ" };
 		}
 
 		NewVector toOut(_left);
@@ -223,12 +223,12 @@ namespace myTask
 		return toOut -= _right;
 	}
 
-	//Переопределение оператора *
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° *
 	NewVector operator*(const NewVector& _left, const NewVector& _right)
 	{
 		if (!_left.CheckMul(_right))
 		{
-			throw logic_error{ "Данные матрицы умножать нельзя" };
+			throw logic_error{ "Р”Р°РЅРЅС‹Рµ РјР°С‚СЂРёС†С‹ СѓРјРЅРѕР¶Р°С‚СЊ РЅРµР»СЊР·СЏ" };
 		}
 
 		NewVector toOut(_left);
@@ -236,7 +236,7 @@ namespace myTask
 		return toOut *= _right;
 	}
 
-	//Переопределение оператора * на скаляр
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° * РЅР° СЃРєР°Р»СЏСЂ
 	NewVector operator*(const NewVector& _left, const double _right)
 	{
 		NewVector toOut(_left);

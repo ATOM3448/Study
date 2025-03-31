@@ -31,7 +31,7 @@ namespace myTask
 		}
 	}
 
-	//Деконструктор
+	//Р”РµРєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	MyBaseClass::~MyBaseClass()
 	{
 		cout << "I'm destrucor, for id: " << id << endl;
@@ -45,49 +45,49 @@ namespace myTask
 		cols = 0;
 	}
 
-	//Получить id
+	//РџРѕР»СѓС‡РёС‚СЊ id
 	int MyBaseClass::getId()const
 	{
 		return id;
 	}
 
-	//Получить строки
+	//РџРѕР»СѓС‡РёС‚СЊ СЃС‚СЂРѕРєРё
 	int MyBaseClass::getRows()const
 	{
 		return rows;
 	}
 
-	//Вставить строки
+	//Р’СЃС‚Р°РІРёС‚СЊ СЃС‚СЂРѕРєРё
 	void MyBaseClass::setRows(int _in)
 	{
 		rows = _in;
 	}
 
-	//Получить колонки
+	//РџРѕР»СѓС‡РёС‚СЊ РєРѕР»РѕРЅРєРё
 	int MyBaseClass::getCols()const
 	{
 		return cols;
 	}
 
-	//Вставить колонки
+	//Р’СЃС‚Р°РІРёС‚СЊ РєРѕР»РѕРЅРєРё
 	void MyBaseClass::setCols(int _in)
 	{
 		cols = _in;
 	}
 
-	//Получить указатель на массив данных
+	//РџРѕР»СѓС‡РёС‚СЊ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РјР°СЃСЃРёРІ РґР°РЅРЅС‹С…
 	double* MyBaseClass::getData()const
 	{
 		return data;
 	}
 
-	//Вставить указатель на массив данных
+	//Р’СЃС‚Р°РІРёС‚СЊ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РјР°СЃСЃРёРІ РґР°РЅРЅС‹С…
 	void MyBaseClass::setData(double* _in)
 	{
 		data = _in;
 	}
 
-	//Получить максимум
+	//РџРѕР»СѓС‡РёС‚СЊ РјР°РєСЃРёРјСѓРј
 	double MyBaseClass::max()const
 	{
 		double max = data[0];
@@ -102,7 +102,7 @@ namespace myTask
 		return max;
 	}
 
-	//Получить минимум
+	//РџРѕР»СѓС‡РёС‚СЊ РјРёРЅРёРјСѓРј
 	double MyBaseClass::min()const
 	{
 		double min = data[0];

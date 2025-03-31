@@ -44,7 +44,7 @@ int main()
 		return 1;
 	}
 
-	// Начинаем работу
+	// РќР°С‡РёРЅР°РµРј СЂР°Р±РѕС‚Сѓ
 	char mode[] = "Tick?";
 
 	MyDate date;

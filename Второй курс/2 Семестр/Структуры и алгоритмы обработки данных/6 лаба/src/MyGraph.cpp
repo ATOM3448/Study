@@ -26,7 +26,7 @@ namespace MyTask
 
 		if (!f.is_open())
 		{
-			cout << endl << "Îøèáêà ÷òåíèÿ ôàéëà" << endl;
+			cout << endl << "ÐžÑˆÐ¸Ð±ÐºÐ° Ñ‡Ñ‚ÐµÐ½Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð°" << endl;
 			return;
 		}
 
@@ -79,24 +79,24 @@ namespace MyTask
 				continue;
 			}
 
-			//Èäåì ê ñëåäóþùåìó óçëó
+			//Ð˜Ð´ÐµÐ¼ Ðº ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ¼Ñƒ ÑƒÐ·Ð»Ñƒ
 			int nextValue = Component(next, _start, _way);
 
-			//Ïðîâåðÿåì íóæíî ëè ìåíÿòü âåñ
+			//ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð½ÑƒÐ¶Ð½Ð¾ Ð»Ð¸ Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð²ÐµÑ
 			if (nextValue < myValue)
 			{
 				myValue = nextValue;
 			}
 		}
 
-		//Âîçâðàùàåì çíà÷åíèå
+		//Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÐ¼ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ
 		_way[_start-1] = myValue;
 		return myValue;
 	}
 
 	void MyGraph::Components()
 	{
-		//Ìàññèâ âåñîâ(è îáîçíà÷åíèå íå ïðîéäåíûõ) óçëîâ
+		//ÐœÐ°ÑÑÐ¸Ð² Ð²ÐµÑÐ¾Ð²(Ð¸ Ð¾Ð±Ð¾Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð½Ðµ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ñ‹Ñ…) ÑƒÐ·Ð»Ð¾Ð²
 		int* way = (int*)malloc(sizeof(int) * count);
 		for (int i = 0; i < count; i++)
 		{
@@ -105,7 +105,7 @@ namespace MyTask
 
 		Component(1, -1, way);
 
-		//Ñ÷èòàåì êîëè÷åñòâî êîìïîíåíò
+		//Ð¡Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚
 		int* comp = (int*)malloc(sizeof(int) * count);
 		int countComp = 0;
 
@@ -128,10 +128,10 @@ namespace MyTask
 			}
 		}
 
-		//Âûâîäèì êîìïîíåíòû
+		//Ð’Ñ‹Ð²Ð¾Ð´Ð¸Ð¼ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ñ‹
 		for (int i = 0; i < countComp; i++)
 		{
-			cout << endl << "Êîìïîíåíòà " << i+1 << ":";
+			cout << endl << "ÐšÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð° " << i+1 << ":";
 			for (int j = 0; j < count; j++)
 			{
 				if (way[j] == comp[i])
@@ -143,7 +143,7 @@ namespace MyTask
 
 		cout << endl;
 
-		//×èñòèì ëèøíåå
+		//Ð§Ð¸ÑÑ‚Ð¸Ð¼ Ð»Ð¸ÑˆÐ½ÐµÐµ
 		delete[] comp;
 		delete[] way;
 	}

@@ -10,61 +10,61 @@ namespace myTask
 		static unsigned int counter;
 	public:
 
-		//Конструктор по умолчанию
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 		explicit NewMatrix();
 
-		//Конструктор с параметрами
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 		NewMatrix(unsigned int _col, unsigned int _row, double* _data);
 
-		//Конструктор копирующий
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂСѓСЋС‰РёР№
 		NewMatrix(const NewMatrix& _in);
 
-		//Конструктор перемещения
+		//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 		NewMatrix(NewMatrix&& _in);
 
-		//Получить значение счётчика
+		//РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ СЃС‡С‘С‚С‡РёРєР°
 		unsigned int MyBaseClass::getNextId();
 
-		//Переименовать
-		//Проверка на возможность сложения
+		//РџРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ
+		//РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЃР»РѕР¶РµРЅРёСЏ
 		bool CheckAdd(const NewMatrix& _in)const;
 
-		//Переименовать
-		//Проверка на возможность умножения
+		//РџРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ
+		//РџСЂРѕРІРµСЂРєР° РЅР° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓРјРЅРѕР¶РµРЅРёСЏ
 		bool CheckMul(const NewMatrix& _in)const;
 
-		//Оператор вывода
+		//РћРїРµСЂР°С‚РѕСЂ РІС‹РІРѕРґР°
 		friend std::ostream& operator<<(std::ostream& _os, const NewMatrix& _in);
 
-		//Оператор копирования
+		//РћРїРµСЂР°С‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 		NewMatrix& operator=(const NewMatrix& _in);
 
-		//Оператор перемещения
+		//РћРїРµСЂР°С‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
 		NewMatrix& operator=(NewMatrix&& _in);
 
-		//Оператор +=
+		//РћРїРµСЂР°С‚РѕСЂ +=
 		NewMatrix& operator+=(const NewMatrix& _in);
 
-		//Оператор -=
+		//РћРїРµСЂР°С‚РѕСЂ -=
 		NewMatrix& operator-=(const NewMatrix& _in);
 
-		//Оператор *=
+		//РћРїРµСЂР°С‚РѕСЂ *=
 		NewMatrix& operator*=(const NewMatrix& _in);
 
-		//Оператор *= скаляр
+		//РћРїРµСЂР°С‚РѕСЂ *= СЃРєР°Р»СЏСЂ
 		NewMatrix& operator*=(const double _in);
 	};
 
-	//Переопределение оператора +
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° +
 	NewMatrix operator+(const NewMatrix& _left, const NewMatrix& _right);
 
-	//Переопределение оператора -
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° -
 	NewMatrix operator-(const NewMatrix& _left, const NewMatrix& _right);
 
-	//Переопределение оператора *
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° *
 	NewMatrix operator*(const NewMatrix& _left, const NewMatrix& _right);
 
-	//Переопределение оператора * на скаляр
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° * РЅР° СЃРєР°Р»СЏСЂ
 	NewMatrix operator*(const NewMatrix& _left, const double _right);
 
 }

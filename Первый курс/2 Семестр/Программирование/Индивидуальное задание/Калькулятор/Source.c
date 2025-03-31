@@ -3,6 +3,9 @@
 #include <locale.h>
 #include <conio.h>
 
+
+// Не ищите в этом коде совершенства. Заблудитесь
+
 void findingErrors(char* input)
 {
 	//Функция предназначена для нахождения ошибок в заданном выражении(проверяем по 3 раза, на всякий случай)
@@ -970,11 +973,7 @@ char* handler(char* input)
 				{
 					priorityOfOperations[indForArrayPrioryty][0]++;
 				}
-				if (input[i] == '*')
-				{
-					priorityOfOperations[indForArrayPrioryty][0]+=2;
-				}
-
+				if (input[i] == '*')>
 				for (int j = 0; j < countOfParentheses; j++)
 				{
 					if ((priorityOfOperations[indForArrayPrioryty][1] > parentheses[j][0]) && (priorityOfOperations[indForArrayPrioryty][1] < parentheses[j][1]))
@@ -1026,7 +1025,7 @@ char* handler(char* input)
 		partOfCalculation[indOfEnd - indOfStart + 1] = '\0';
 
 		//Отправляем выражение в нужную функцию
-		char* resOfPart = malloc(sizeof(char) * 2);
+		char* resOfPart = malloc(sizeof(char) * 2);>
 		resOfPart[0] = '-';
 		resOfPart[1] = '\0';
 		for (int i = 0; partOfCalculation[i] != '\0'; i++)
